@@ -59,7 +59,7 @@ function show(event) {
 
   // responseを処理する
   // 連想配列（オブジェクト）のキーを取り出す
-  console.log(response[0].summary.title);
+  console.log(response[0].summary.cover);
 
 }
 
