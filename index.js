@@ -4,21 +4,22 @@
 // 1. ボタンがクリックされたときのイベントを追加
 const button = document.getElementById("main");  // HTML中のボタン（id="main"）を検索
 button.addEventListener("click", function () {
+  const post_code = document.getElementById("zipcode").value;
+
   // 2. APIにリクエストを送り、レスポンスを受け取る
-  get();
+  get(post_code);
 });
 
 // 1. ここまで
 
 // 2. APIにリクエストを送り、レスポンスを受け取る
-function get() {
+function get(post_code) {
   // XMLHttpRequest(XHR)オブジェクトの初期化
   const request = new XMLHttpRequest();
 
   // URLを組み立てて、リクエストを準備する（まだリクエストは未送信）
 
-  const idEncoded = encodeURIComponent("978-4-0486-6452-3");  // URL用にエンコード
-  const url = `https://api.openbd.jp/v1/get?isbn=${idEncoded}&pretty`;  // テンプレートリテラルを使用（バッククォートで囲む）
+  const url = `http://zipcloud.ibsnet.co.jp/api/search?zipcode=${post_code}`;  // テンプレートリテラルを使用（バッククォートで囲む）
   request.open("GET", url);
 
   // サーバからレスポンスが返ってきた場合の処理を登録
@@ -59,7 +60,7 @@ function show(event) {
 
   // responseを処理する
   // 連想配列（オブジェクト）のキーを取り出す
-  console.log(response[0].summary.cover);
+  console.log(response.results[0].address1);
 
 }
 

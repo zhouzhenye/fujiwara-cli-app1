@@ -2,17 +2,20 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
         <title>Web APIを使ったアプリ</title>
     </head>
     <body>
-        <h1>Web APIを使ったアプリ（提出用）</h1>
+      <h1>郵便番号</h1>
+<!-- 郵便番号入力のテキストボックス -->
+        <input type="text" id="zipcode" value="" maxlength="7">
+        <input type="button" id="search_btn" value="検索">
+      <p>7桁の半角数字で入力してください</p>
 
-        <!-- ボタン -->
-        <button id="main">Get</button>
+<!-- 検索結果の表示エリア -->
+<div id="zip_result"></div>
 
-        <!-- 処理後のDOMを表示する -->
-        <div id="result"></div>
-
-        <script src="index.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     </body>
 </html>
